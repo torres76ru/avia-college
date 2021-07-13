@@ -1,0 +1,20 @@
+{% extends "pages/wrapper.html" %}
+{% load static %}
+{% block title %}Отмена электронной записи{% endblock %}
+{% block content %}
+	{% if deleted %}
+		<h1 class="h1">Вы успешно отменили запись</h1>
+		<p>Теперь вы можете записаться на другое время</p>
+	{% else %}
+	<h1 class="h1">Вы уверены что хотите отменить запись?</h1>
+	<form class="form delete-form" action="." method="post">
+		{{ form.non_field_errors }}
+		<p>
+			{{ form.key.errors}}
+			{{ form.key }}
+		</p>
+		{% csrf_token %}
+		<input class="input submit" type="submit" value="Отменить запись">
+	</form>
+	{% endif %}
+{% endblock content %}

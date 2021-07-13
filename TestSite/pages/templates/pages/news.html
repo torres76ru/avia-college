@@ -1,0 +1,48 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Новости{% endblock %}
+{% block content %}
+{% load static %}
+        <main class="content">
+            <div class="news">
+            	<div class="container">
+            		<div class="title-page">
+            			Новости
+            		</div>
+            		<div class="underblock"><div class="underblock__component"></div></div>
+                    
+                     
+                    <!--  <div class="news__block">
+                        <div class="news__title">
+                            День открытых дверей
+                        </div>
+                        <div class="news__img"><img src="/static/pages/img/news.jpg" alt=""></div>
+                        <div class="underblock"><div class="underblock__component"></div></div>
+                    </div> -->
+
+                   <!--   <div class="news__block">
+                       <div class="news__title">
+                           Какая-то новость пример 2
+                       </div>
+                       <div class="news__text text">
+                           ВНИМАНИЕ!<br>
+                                               Опубликованы ИТОГОВЫЕ <a href="#">рейтинговые списки абитуриентов</a>
+                                               19.08.2020
+                       </div>
+                       <div class="underblock"><div class="underblock__component"></div></div>
+                   </div> -->
+                  {% for new in content %}
+                     <div class="news__block">
+                     	<div class="news__title">
+                     		{{new.title | safe}}
+                     	</div>
+                     	<div class="news__text text">
+                        {{new.content | safe}}
+                      </div>
+                     </div>
+                     <div class="underblock"><div class="underblock__component"></div></div>
+                     {% endfor %}
+            	</div>
+            </div>
+           
+        </main>
+{% endblock %}

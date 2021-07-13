@@ -1,0 +1,22 @@
+{% extends "pages/wrapper.html" %}
+{% load static %}
+{% block title %}Приказы о зачислении{% endblock %}
+{% block content %}
+        <main class="content">
+            <div class="transfer-orders">
+                <div class="container">
+                    <div class="title-page">
+                       Приказы о зачислении
+                    </div>
+                    <div class="underblock"><div class="underblock__component"></div></div>
+                    <div class="text">{{ content.info | safe}}</div>
+                     <!-- <div class="text">
+                         
+                         <a href="#">Приказ о зачислении от 20.08.20 (бюджет)</a><br>
+                         <a href="#">Приказ о зачислении от 21.08.20 (договор)</a>
+                     </div> -->
+                   
+                </div>
+            </div>
+        </main>
+{% endblock %}

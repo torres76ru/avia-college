@@ -1,0 +1,27 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Приемная коммиссия{% endblock %}
+{% block content %}
+{% load static %}
+<main class="content">
+      <div class="selection-committee">
+            <div class="container">
+                  <div class="title-page">
+                  {{ content.heading | safe}}
+                  </div>
+                  <div class="underblock"><div class="underblock__component"></div></div>
+
+                  <div class="text">{{ content.p1 | safe}}</div>
+                  <div class="text">{{ content.p2 | safe}}</div>
+                  <div class="text">{{ content.p3 | safe}}</div>
+
+                  <div class="warning-block">
+                  {{ content.warning1 | safe}}
+                  </div>
+                  <div class="text">{{ content.label1 | safe}}</div>
+                  {{ content.table1 | safe}}
+                  <div class="text">{{ content.label2 | safe}}</div>
+                  {{ content.table2 | safe}}
+            </div>
+      </div>
+</main>
+{% endblock %}

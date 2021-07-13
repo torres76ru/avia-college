@@ -1,0 +1,16 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Правила приёма{% endblock %}
+{% block content %}
+{% load static %}
+        <main class="content">
+            <div class="admission-rules">
+            	<div class="container">
+            		<div class="title-page">
+            			Правила приёма
+            		</div>
+            		<div class="underblock"><div class="underblock__component"></div></div>
+                     <div class="text">{{ content.info | safe}}</div>
+            	</div>
+            </div>
+        </main>
+{% endblock %}

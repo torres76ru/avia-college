@@ -1,0 +1,16 @@
+{% extends "pages/wrapper.html" %}
+{% load static %}
+{% block title %}Рейтинговые списки{% endblock %}
+{% block content %}
+        <main class="content">
+            <div class="rating-lists">
+                <div class="container">
+                    <div class="title-page">
+                        Рейтинговые списки абитуриентов
+                    </div>
+                    <div class="underblock"><div class="underblock__component"></div></div>
+                    <div class="text">{{ content.info | safe}}</div>
+                </div>
+            </div>
+        </main>
+{% endblock %}

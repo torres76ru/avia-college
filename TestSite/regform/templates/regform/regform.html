@@ -1,0 +1,285 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Электронная подача документов{% endblock %}
+{% block content %}
+{% load static %}
+{% load add_class %}
+ <link rel="stylesheet" href="{% static 'regform/css/style.css' %}"> 
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="{% static 'pages/js/jquery.maskedinput.js' %}"></script>
+<main class="content">
+
+	<div class="wrapper">
+	<div class="container">
+	<div class="title">
+		<h1>Подача документов</h1>
+		<h2>В Рыбинский Авиационный Колледж</h2>
+	</div>
+	<div class="download_zayvl">
+		<div class="download" >
+			<div class="download__icon">
+				<img src="{% static 'pages/img/icons/doc-icon.svg' %}" alt="">
+			</div>
+			<div class="download__text"><span>Заявление</span></div>
+			<div class="download__column">
+				<a href="{% static 'regform/files/Zayavlenie.pdf' %}" target="_blank" class="download__button">Скачать</a>
+			</div>
+		</div>
+		<div class="download" >
+			<div class="download__icon">
+				<img src="{% static 'pages/img/icons/doc-icon.svg' %}" alt="">
+			</div>
+			<div class="download__text"><span>Cогласие на обработку данных</span></div>
+			<div class="download__column">
+				<a href="{% static 'regform/files/Soglasie.pdf' %}" target="_blank" class="download__button">Скачать</a>
+			</div>
+		</div>
+	</div>
+	
+	<form action="/reg/"  enctype="multipart/form-data" method="post"  class="regform" >
+		{{ form.non_field_errors }}
+		<div class="regform__column">
+			<div class="regform-block">
+				<h2 class="regform-block__title">Персональныe данные</h2>
+				<div class="regform__body regform-body">
+					<div class="regform-body__item regform-body-item">
+						{{ form.surname.errors }}
+						<div class="regform-body-item__label">
+							{{ form.surname.label }}
+						</div>
+						
+						{{ form.surname | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.name.errors }}
+						<div class="regform-body-item__label">
+							{{ form.name.label }}
+						</div>
+						
+						{{ form.name | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.midname.errors }}
+						<div class="regform-body-item__label">
+							{{ form.midname.label }}
+						</div>
+						
+						{{ form.midname | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.birthday.errors }}
+						<div class="regform-body-item__label">
+							{{ form.birthday.label }}
+						</div>
+						
+						{{ form.birthday | addclass:"regform-body-item__input mask-date"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.obraz.errors }}
+						<div class="regform-body-item__label">
+							{{ form.obraz.label }}
+						</div>
+						
+						{{ form.obraz | addclass:"regform-body-item__input"}}
+						<datalist id="lst">
+						  <option value="Основное общее">
+						  <option value="Среднее общее">
+						</datalist>
+					</div>
+					<div class="regform-body__item regform-body-item_checkbox"> 
+						{{ form.hostel.errors }}
+						{{ form.hostel | addclass:"regform-body-item_checkbox__check"}}
+						<label class="regform-body-item__label" for="id_hostel">
+							{{ form.hostel.label }}
+						</label>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="regform__column">
+			<div class="regform-block">
+				<h2 class="regform-block__title">Паспортные данные</h2>
+				<div class="regform__body regform-body">
+					<div class="regform-body__item regform-body-item">
+						{{ form.ps.errors }}
+						<div class="regform-body-item__label">
+							{{ form.ps.label }}
+						</div>
+						
+						{{ form.ps | addclass:"regform-body-item__input mask-passport-seria"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pn.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pn.label }}
+						</div>
+						
+						{{ form.pn | addclass:"regform-body-item__input mask-passport-number"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pc.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pc.label }}
+						</div>
+						
+						{{ form.pc | addclass:"regform-body-item__input mask-passport-division"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pi.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pi.label }}
+						</div>
+						
+						{{ form.pi | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pd.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pd.label }}
+						</div>
+						
+						{{ form.pd | addclass:"regform-body-item__input mask-date"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pg.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pg.label }}
+						</div>
+						
+						{{ form.pg | addclass:"regform-body-item__input_file" }}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.pp.errors }}
+						<div class="regform-body-item__label">
+							{{ form.pp.label }}
+						</div>
+						
+						{{ form.pp | addclass:"regform-body-item__input_file" }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="regform__column">
+			<div class="regform-block">
+				<h2 class="regform-block__title">Аттестат</h2>
+				<div class="regform__body regform-body">
+					<div class="regform-body__item regform-body-item">
+						{{ form.an.errors }}
+						<div class="regform-body-item__label">
+							{{ form.an.label }}
+						</div>
+						
+						{{ form.an | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.ad.errors }}
+						<div class="regform-body-item__label">
+							{{ form.ad.label }}
+						</div>
+						
+						{{ form.ad | addclass:"regform-body-item__input mask-date"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.ai.errors }}
+						<div class="regform-body-item__label">
+							{{ form.ai.label }}
+						</div>
+						
+						{{ form.ai | addclass:"regform-body-item__input"}}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.ag.errors }}
+						<div class="regform-body-item__label">
+							{{ form.ag.label }}
+						</div>
+						
+						{{ form.ag | addclass:"regform-body-item__input_file" }}
+					</div>
+					<div class="regform-body__item regform-body-item">
+						{{ form.am.errors }}
+						<div class="regform-body-item__label">
+							{{ form.am.label }}
+						</div>
+						
+						{{ form.am | addclass:"regform-body-item__input_file" }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="regform__column">
+			<div class="regform-block">
+				<h2 class="regform-block__title">Контактные данные</h2>
+				<div class="regform__body regform-body">
+					<div class="regform-body__item regform-body-item">
+						{{ form.phone.errors }}
+						<div class="regform-body-item__label">
+							{{ form.phone.label }}
+						</div>
+						
+						{{ form.phone | addclass:"regform-body-item__input mask-phone"}}
+					</div>
+					
+				</div>
+				<h2 class="regform-block__title">Файлы</h2>
+				<div class="regform__body regform-body">
+				<div class="regform-body__item regform-body-item">
+					{{ form.statement.errors }}
+					<div class="regform-body-item__label">
+						{{ form.statement.label }}
+					</div>
+					{{ form.statement | addclass:"regform-body-item__input_file" }}
+				</div>
+				<div class="regform-body__item regform-body-item">
+					{{ form.agreement.errors }}
+					<div class="regform-body-item__label">
+						{{ form.agreement.label }}
+					</div>
+					{{ form.agreement | addclass:"regform-body-item__input_file" }}
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="regform-column">
+		<p class="agree">
+			{{ form.agree.errors }}
+			{{ form.agree }}
+			<span>Я прочитал и принимаю <a href="#popup" class="popup-link">«Согласие на обработку персональных данных»</a></span>
+		</p>
+		<input type="submit" placeholder="Отправить" class="send-btn">
+		{% csrf_token %}
+		</div>
+	</form>
+	
+	</div>
+	</div>
+	<script>
+		$('.mask-passport-seria').mask('99-99');
+		$('.mask-passport-number').mask('999999');
+		$('.mask-passport-division').mask('999-999');
+		$('.mask-date').mask('99/99/9999');
+		$('.mask-phone').mask('+7 (999) 999-99-99');
+	</script>
+<div id="popup" class="popup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="#" class="popup__close close-popup"><img  src="{% static 'popup/img/icons/close.svg' %}" alt="X"/></a>
+			<p>Пользователь, регистрируясь на данном сайте, обязуется принять Согласие на обработку персональных данных (далее – Согласие). Принятием (акцептом) оферты настоящего Согласия является регистрация Пользователя на Сайте. Пользователь дает свое согласие «РГАТУ имени П.А. Соловьева» Авиационный колледж на обработку своих персональных данных со следующими условиями:</p>
+			<ol style="padding-left: 20px">
+				<li>
+					Согласие дается на обработку необходимых в связи с поступлением в «РГАТУ имени П.А. Соловьева» Авиационный колледж, а также наиболее полного исполнения ОПЕРАТОРОМ обязательств и компетенций в соответствии с законодательством РФ следующих моих персональных данных:
+					<ul style="padding-left: 20px;">
+						<li style="list-style: circle;">адрес электронной почты;</li>
+					</ul>
+				</li>
+				<li>Под обработкой персональных данных следует понимать любое действие (операцию) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение персональных данных, а также передачу (распространение, предоставление, доступ). Передачу моих персональных данных осуществлять только с моего письменного согласия или на основании действующего федерального закона.</li>
+				<li>Я уведомлен(а) о своем праве отозвать согласие путем подачи ОПЕРАТОРУ письменного заявления. Подтверждаю, что я ознакомлен(а) с Федеральным законом от 27.07.2006 No152-ФЗ «О персональных данных», с Положением о порядке обработки и защите персональных данных работников и обучающихся «РГАТУ имени П.А. Соловьева» Авиационный колледж, с моими правами и обязанностями в области защиты персональных данных, в том числе с возможными последствиями в случае моего отказа от согласия на обработку персональных данных.</li>
+			</ol>
+		</div>
+	</div>
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+	</main>
+{% endblock %}
+
+        

@@ -1,0 +1,20 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}ПРОИЗВОДСТВО АВИАЦИОННЫХ ДВИГАТЕЛЕЙ{% endblock %}
+{% block content %}
+        <main class="content">
+            <div class="specialties">
+                <div class="container">
+                    <div class="title">
+                        {{ content.heading | safe}}
+                        <br/>
+                       {{ content.number | safe}}
+                    </div>
+                    <div class="subtitle">
+                     {{ content.heading2 | safe}}
+                    </div>
+                    <div class="undertitle"><div class="undertitle__component"><div class="undertitle__component2"></div></div></div>
+                     <div class="text">{{ content.info | safe}}</div>
+                </div>
+            </div>
+        </main>
+{% endblock %}

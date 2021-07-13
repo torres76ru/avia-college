@@ -1,0 +1,88 @@
+	<!-- <div class="header-up">
+	    <div class="container">
+	        <div class="header-up__row">
+	            <div class="header-up__column">
+	                <a class="header-up__link" href="#"><span>RAK.KADR@YANDEX.RU</span></a>
+	            </div>
+	            <div class="header-up__column">
+	                <a class="header-up__link" href="#"><span>8(4855) 28-04-02</span></a>
+	            </div>
+	            <div class="header-up__column">
+	                <a class="header-up__link" href="#"><span>ВКОНТАКТЕ</span></a>
+	            </div>
+	        </div>
+	    </div>
+	</div> -->
+	{% load static %}
+	<header class="header">
+		<div class="header__row container">
+			<a href="#" class="header__logo">
+				<img src="{% static 'pages/img/logo.png' %}" alt="logo" />
+				<!-- <span>Авиационный <br /> колледж</span> -->
+			</a>
+			<div class="menu__icon icon-menu">
+				<div class="icon-menu__cross">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<ul class="navigation">
+				<li class="navigation__column">
+					<a class="navigation__link" href="{% url 'index' %}"><span>ГЛАВНАЯ</span></a>
+				</li>
+				<li class="navigation__column">
+					<a class="navigation__link" href="{% url 'news' %}"><span>НОВОСТИ</span></a>
+				</li>
+				<li class="navigation__column">
+					<a class="navigation__link navigation__list" id="abiturient" href="#"><span>АБИТУРИЕНТУ</span></a>
+					<ul class="navigation__menu abiturient-menu">
+						<li class="abiturient-menu-link"><a href="{% url 'priemcomissia' %}" class="menu-link">Приёмная комиссия</a></li>
+						<li class="abiturient-menu-link"><a href="{% url 'pravilapriema' %}" class="menu-link">Правила приёма</a></li>
+						<li class="abiturient-menu-link"><a href="{% url 'infooprieme' %}" class="menu-link">Информация о приёме</a></li>
+						<li class="abiturient-menu-link"><a href="{% url 'reitingoviespiske' %}" class="menu-link">Рейтинговые списки</a></li>
+						<li class="abiturient-menu-link"><a href="{% url 'prikazeozachislenie' %}" class="menu-link">Приказы о зачислении</a></li>
+					</ul>
+				</li>
+				<ul class="menu-responsive abiturient-menu-responsive"></ul>
+				<li class="navigation__column">
+					<a class="navigation__link navigation__list" id="college" href="#"><span>О КОЛЛЕДЖЕ</span></a>
+					<ul class="navigation__menu college-menu">
+						<li class="college-menu-link"><a href="{% url 'excursion' %}" class="menu-link">Виртуальная экскурсия</a></li>
+						<li class="menu-link_spec college-menu-link">
+							<a href="#" class="menu-link" id="spec">Специальности</a>
+							<ul class="navigation__menu navigation__menu_2 spec-menu">
+								<li class="spec-menu-link"><a href="{% url 'setevoe_i_sistemnoe_administririvanie' %}" class="menu-link">Сетевое и системное администрирование</a></li>
+								<li class="spec-menu-link"><a href="{% url 'proizvodstvo_aviocionneh_dvigateley' %}" class="menu-link">Производство авиационных двигателей</a></li>
+								<li class="spec-menu-link"><a href="{% url 'tehnologii_mashinostroenia' %}" class="menu-link">Технология машиностроения</a></li>
+								<li class="spec-menu-link"><a href="{% url 'informatsionnie_sisteme_i_programmirovanie' %}" class="menu-link">Информационные системы и программирование</a></li>
+								<li class="spec-menu-link"><a href="{% url 'pravo_i_organisacia_soc_obespechenia' %}" class="menu-link">Право и организация социального обеспечения</a></li>
+								<li class="spec-menu-link"><a href="{% url 'electrichestvo' %}" class="menu-link">Электрические станции, сети и системы</a></li>
+								<li class="spec-menu-link"><a href="{% url 'technologia_metaloobrabatevaushego_proizvodstva' %}" class="menu-link">Технология металообрабатывающего производства</a></li>
+							</ul>
+						</li>
+						<ul class="college-menu-link menu-responsive spec-menu-responsive"></ul>
+						<li class="college-menu-link"><a href="http://old.rsatu.ru/sites/college/index.php?option=com_content&view=category&layout=blog&id=53&Itemid=164" class="menu-link" target="_blank">История колледжа</a></li>
+					</ul>
+				</li>
+				<ul class="menu-responsive college-menu-responsive"></ul>
+				<li class="navigation__column">
+				    <a class="navigation__link navigation__list" id="give-docs" href="#"><span>ПОДАТЬ ДОКУМЕНТЫ</span></a>
+				    <ul class="navigation__menu give-docs-menu">
+				    	<li class="give-docs-menu-link"><a href="{% url 'regform' %}" class="menu-link">Электронная подача документов</a></li>
+				        <li class="give-docs-menu-link"><a href="{% url 'instrtaction2' %}" class="menu-link">Электронная запись</a></li>
+				        <li class="give-docs-menu-link"><a href="{% url 'instrtaction' %}" class="menu-link">Электронная почта</a></li>
+				        <li class="give-docs-menu-link"><a href="{% url 'instrtaction3' %}" class="menu-link">Почта России</a></li>
+				    </ul>
+				</li>
+				<ul class="menu-responsive give-docs-menu-responsive"></ul>
+				<li class="navigation__column">
+					<a class="navigation__link" href="http://old.rsatu.ru/sites/college/" target="_blank"><span>ОФИЦИАЛЬНЫЙ САЙТ</span></a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="header-down">
+	</div>
+
+			

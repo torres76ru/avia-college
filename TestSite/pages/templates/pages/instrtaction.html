@@ -1,0 +1,18 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Подача документов через электронную почту{% endblock %}
+{% block content %}
+{% load static %}
+        <main class="content">
+            <div class="manual">
+            	<div class="container">
+            		<div class="title-page">
+            			{{content.title | safe }}
+            		</div>
+            		<div class="underblock"><div class="underblock__component"></div></div>
+            		<div class="text">{{ content.info | safe}}</div>
+            		<div class="underblock"><div class="underblock__component"></div></div>
+                   
+            	</div>
+            </div>
+        </main>
+{% endblock %}

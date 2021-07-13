@@ -1,0 +1,93 @@
+{% extends "pages/wrapper.html" %}
+{% load static %}
+{% block title %}Электронная запись{% endblock %}
+{% block content %}
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <main class="content">
+	{% if sent %}
+		<h1>Электронная очередь</h1>
+		<p>Письмо с данными было отправлено на вашу электронную почту.</p>
+	{% else %}
+		<div class="calendar">
+			<script>
+				$(function () {
+					var use_privacy = true;
+					$('#form1').on('submit', function (e) {
+
+						if (use_privacy) {
+							if (!$(this).find('input[name=privacy]').prop('checked')) {
+								alert('Для продолжения вы должны дать согласие на обработку персональных данных');
+								return false;
+							}
+						}
+
+					});
+				});
+			</script>
+			<form id="form1" name="form1" class="form send-form" action="." method="post">
+				{{ form.as_p }}
+				{% csrf_token %}
+				<p class="checkbox">
+					<input type="checkbox" name="privacy">
+					<span>Я прочитал и принимаю <a href="#popup" class="popup-link">«Согласие на обработку персональных данных»</a></span>
+
+				</p>
+				<table id="calendar2"> 
+				  <thead>
+				    <tr><td>‹<td colspan="5"><td>›
+				    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+				  <tbody>
+				</table>
+
+				<table id="time">
+				  <thead>
+				      <tr><td class="q-time" onclick="var time = '08:00:00'; add_time(time)">08:00<td class="q-time" onclick="var time = '08:10:00'; add_time(time)">08:10<td class="q-time" onclick="var time = '08:20:00'; add_time(time)">08:20<td class="q-time" onclick="var time = '08:30:00'; add_time(time)">08:30</td>
+						<tr><td class="q-time" onclick="var time = '08:40:00'; add_time(time)">08:40<td class="q-time" onclick="var time = '08:50:00'; add_time(time)">08:50<td class="q-time" onclick="var time = '09:00:00'; add_time(time)">09:00<td class="q-time" onclick="var time = '09:10:00'; add_time(time)">09:10</td>
+						<tr><td class="q-time" onclick="var time = '09:20:00'; add_time(time)">09:20<td class="q-time" onclick="var time = '09:30:00'; add_time(time)">09:30<td class="q-time" onclick="var time = '09:40:00'; add_time(time)">09:40<td class="q-time" onclick="var time = '09:50:00'; add_time(time)">09:50</td>
+						<tr><td class="q-time" onclick="var time = '10:00:00'; add_time(time)">10:00<td class="q-time" onclick="var time = '10:10:00'; add_time(time)">10:10<td class="q-time" onclick="var time = '10:20:00'; add_time(time)">10:20<td class="q-time" onclick="var time = '10:30:00'; add_time(time)">10:30</td>
+						<tr><td class="q-time" onclick="var time = '10:40:00'; add_time(time)">10:40<td class="q-time" onclick="var time = '10:50:00'; add_time(time)">10:50<td class="q-time" onclick="var time = '11:00:00'; add_time(time)">11:00<td class="q-time" onclick="var time = '11:10:00'; add_time(time)">11:10</td>
+						<tr><td class="q-time" onclick="var time = '11:20:00'; add_time(time)">11:20<td class="q-time" onclick="var time = '11:30:00'; add_time(time)">11:30<td class="q-time" onclick="var time = '11:40:00'; add_time(time)">11:40<td class="q-time" onclick="var time = '11:50:00'; add_time(time)">11:50</td>
+						<tr><td class="q-time" onclick="var time = '12:00:00'; add_time(time)">12:00<td class="q-time" onclick="var time = '12:10:00'; add_time(time)">12:10<td class="q-time" onclick="var time = '12:20:00'; add_time(time)">12:20<td class="q-time" onclick="var time = '12:30:00'; add_time(time)">12:30</td>
+						<tr><td class="q-time" onclick="var time = '12:40:00'; add_time(time)">12:40<td class="q-time" onclick="var time = '12:50:00'; add_time(time)">12:50<td class="q-time" onclick="var time = '13:00:00'; add_time(time)">13:00<td class="q-time" onclick="var time = '13:10:00'; add_time(time)">13:10</td>
+						<tr><td class="q-time" onclick="var time = '13:20:00'; add_time(time)">13:20<td class="q-time" onclick="var time = '13:30:00'; add_time(time)">13:30<td class="q-time" onclick="var time = '13:40:00'; add_time(time)">13:40<td class="q-time" onclick="var time = '13:50:00'; add_time(time)">13:50</td>
+						<tr><td class="q-time" onclick="var time = '14:00:00'; add_time(time)">14:00<td class="q-time" onclick="var time = '14:10:00'; add_time(time)">14:10<td class="q-time" onclick="var time = '14:20:00'; add_time(time)">14:20<td class="q-time" onclick="var time = '14:30:00'; add_time(time)">14:30</td>
+						<tr><td class="q-time" onclick="var time = '14:40:00'; add_time(time)">14:40<td class="q-time" onclick="var time = '14:50:00'; add_time(time)">14:50<td class="q-time" onclick="var time = '15:00:00'; add_time(time)">15:00<td class="q-time" onclick="var time = '15:10:00'; add_time(time)">15:10</td>
+						<tr><td class="q-time" onclick="var time = '15:20:00'; add_time(time)">15:20<td class="q-time" onclick="var time = '15:30:00'; add_time(time)">15:30<td class="q-time" onclick="var time = '15:40:00'; add_time(time)">15:40<td class="q-time" onclick="var time = '15:50:00'; add_time(time)">15:50</td>
+				  <tbody>
+				</table>
+				<input class="input submit q-submit" id="q-submit" type="submit" name="submit" value="Отправить">
+			</form>
+		</div>
+		<div id="popup" class="popup">
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="#" class="popup__close close-popup"><img  src="{% static 'pages/img/icons/close.svg' %}" alt="X"/></a>
+					<p>Пользователь, регистрируясь на данном сайте, обязуется принять Согласие на обработку персональных данных (далее – Согласие). Принятием (акцептом) оферты настоящего Согласия является регистрация Пользователя на Сайте. Пользователь дает свое согласие «РГАТУ имени П.А. Соловьева» Авиационный колледж на обработку своих персональных данных со следующими условиями:</p>
+					<ol style="padding-left: 20px">
+						<li>
+							Согласие дается на обработку необходимых в связи с поступлением в «РГАТУ имени П.А. Соловьева» Авиационный колледж, а также наиболее полного исполнения ОПЕРАТОРОМ обязательств и компетенций в соответствии с законодательством РФ следующих моих персональных данных:
+							<ul style="padding-left: 20px;">
+								<li style="list-style: circle;">адрес электронной почты;</li>
+							</ul>
+						</li>
+						<li>Под обработкой персональных данных следует понимать любое действие (операцию) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение персональных данных, а также передачу (распространение, предоставление, доступ). Передачу моих персональных данных осуществлять только с моего письменного согласия или на основании действующего федерального закона.</li>
+						<li>Я уведомлен(а) о своем праве отозвать согласие путем подачи ОПЕРАТОРУ письменного заявления. Подтверждаю, что я ознакомлен(а) с Федеральным законом от 27.07.2006 No152-ФЗ «О персональных данных», с Положением о порядке обработки и защите персональных данных работников и обучающихся «РГАТУ имени П.А. Соловьева» Авиационный колледж, с моими правами и обязанностями в области защиты персональных данных, в том числе с возможными последствиями в случае моего отказа от согласия на обработку персональных данных.</li>
+					</ol>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			{% autoescape off %}
+			let dtf_arr = {{dt_arr}}
+			{% endautoescape %}
+		</script>
+		<script src="{% static 'pages/js/queue.js' %}"></script>
+	{% endif %}
+</main>
+{% endblock %}

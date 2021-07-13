@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	{% load static %}
+	<!-- <link rel="stylesheet" href="{% static 'pages/css/style.css' %}"> -->
+	<link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+	<link rel="icon" href="{% static 'pages/img/logo.png' %}" type="image/x-icon">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<script src="{% static 'pages/js/jquery-3.6.0.min.js' %}"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+</head>
+<body>
+<!-- <div class="wrapper"> -->
+{% include "pages/includes/header.html" %}
+
+	{% block content %}
+
+	{% endblock %}
+{% include "pages/includes/footer.html" %}
+<!-- </div> -->
+<script src="{% static 'pages/js/main.js' %}"></script>
+{% include "popup/popup.html" %}
+<script src="https://kit.fontawesome.com/a762f65aa5.js" crossorigin="anonymous"></script>
+</body>
+</html>

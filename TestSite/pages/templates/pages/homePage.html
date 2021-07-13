@@ -1,0 +1,44 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+{% load static %}
+
+            
+        <main class="content">
+            
+            <div class="reception-campaign block"> 
+                <div class="reception-campaign__title">
+                    {{ content.heading | safe}}
+
+                </div>
+                <div class="reception-campaign__subtitle">{{ content.subheading | safe}}</div>
+            </div>
+            <div class="mission_of_educational block">
+                <div class="container">
+                    <div class="title">{{ content.p1 | safe}}</div>
+                    <div class="undertitle"><div class="undertitle__component"><div class="undertitle__component2"></div></div></div>
+                    <div class="text"> {{ content.p2 | safe}}</div>
+                </div>
+            </div>
+            <div class="professions block"> 
+                <div class="container"> 
+                    <div class="professions__content"> 
+                            <div class="professions__title title">{{ content.p3 | safe}}</div>
+                            <div class="undertitle"><div class="undertitle__component"><div class="undertitle__component2"></div></div></div>
+                            <div class="professions__text"> 
+                                <div class="text">
+                                    {{ content.p4 | safe}}
+                                </div>
+                                 <div class="text">
+                                    {{ content.p5 | safe}}
+                                 </div>
+                                <ul class="professions__list">
+                                    {{ content.prof | safe}}
+                                </ul>
+                            </div>
+                    </div>          
+                    <div class="professions__img">  <img src="{% static 'pages/img/students.png' %}" alt=""></div>
+                </div>  
+            </div>  
+        </main>
+{% endblock %}

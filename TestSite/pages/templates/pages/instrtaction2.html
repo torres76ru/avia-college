@@ -1,0 +1,21 @@
+{% extends "pages/wrapper.html" %}
+{% block title %}Электронная запись{% endblock %}
+{% block content %}
+ <main class="content">
+            <div class="manual">
+            	<div class="container">
+            		<div class="title-page">
+						{{content.title | safe }}
+						</div>
+						<div class="underblock"><div class="underblock__component"></div></div>
+						<div class="text">
+							{{ content.info | safe}}
+						</div>
+						<div class="text">
+							<a class="btn" href="{% url 'send' %}" >Записаться</a>
+						</div>
+					</div>
+				</div>
+			</main>
+
+{% endblock %}

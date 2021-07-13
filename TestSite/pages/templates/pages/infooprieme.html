@@ -1,0 +1,21 @@
+{% extends "pages/wrapper.html" %}
+{% block title %} Информация о приёме{% endblock %}
+{% block content %}
+{% load static %}
+
+        <main class="content">
+            <div class="admission-information">
+                <div class="container">
+                    <div class="title-page">
+                        Информация о приёме
+                    </div>
+                    <div class="underblock"><div class="underblock__component"></div></div>
+                    <div class="text">{{ content.info | safe}}</div>
+                    <!--  <div class="warning-block"><strong>ВНИМАНИЕ! </strong>Продолжается набор на платное обучение по договору согласно плану приема</div>
+                                      
+                                        <div class="underblock"><div class="underblock__component"></div></div> -->
+                   
+                </div>
+            </div>
+        </main>
+{% endblock %}
